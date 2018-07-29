@@ -9,15 +9,30 @@ func SumDigit(start: Int, end: Int) -> Int {
     //loop through the numbers between start and end
     while index <= end{
         
+        sum = 0
+        var currentNumber = index
 
-        while index/10 > 0 {
-            sum = sum + index%10
+        while currentNumber/10 > 0 {
+            
+            sum = sum + currentNumber%10
+            currentNumber /= 10
+            
         }
         
+        print(sum)
+        
+        if sum%2 == 0{
+            evenNumbers.append(index)
+        }
+        
+        index += 1
+        
     }
+    
+    dump(evenNumbers)
     
     return 0
     
 }
 
-SumDigit(start: 2, end: 7)
+SumDigit(start: 222, end: 267)
