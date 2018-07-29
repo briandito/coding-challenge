@@ -11,15 +11,17 @@ func SumDigit(start: Int, end: Int) -> Int {
         
         sum = 0
         var currentNumber = index
-
+        
         while currentNumber/10 > 0 {
             
             sum = sum + currentNumber%10
             currentNumber /= 10
             
+            if currentNumber < 10{
+                sum = sum + currentNumber
+            }
+            
         }
-        
-        print(sum)
         
         if sum%2 == 0{
             evenNumbers.append(index)
@@ -35,4 +37,4 @@ func SumDigit(start: Int, end: Int) -> Int {
     
 }
 
-SumDigit(start: 222, end: 267)
+SumDigit(start: 1522, end: 1667)
